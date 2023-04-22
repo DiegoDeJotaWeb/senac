@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Display flex</title>
+    <style>
+        /* Flex display: flex;
+Torna o elemento um flex container 
+automaticamente transformando todos os seus filhos diretos em flex itens.*/
+
+        /*display
+Define o elemento como um flex container, tornando os seus filhos flex-itens*/
+        .flex {
+            display: flex;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .flex-no-wrap {
+            flex-wrap: nowrap;
+        }
+
+        .flex-wrap-reverse {
+            flex-wrap: wrap-reverse;
+        }
+
+        /* Flex Item */
+        .item {
+            margin: 5px;
+            background: orange;
+            text-align: center;
+            font-size: 1.5em;
+            /* width: 130px; */
+            flex: 1;
+        }
+
+        .container {
+            display: flex;
+            max-width: 400px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+        }
+
+        .flex-basis {
+            flex-basis: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0 0 0;
+            font-size: 1.25em;
+            font-weight: normal;
+        }
+
+        body {
+            font-family: monospace;
+            color: #333;
+        }
+
+        .item-1 {
+
+            flex: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>flex-wrap: nowrap;</h1>
+    <section class="container flex-no-wrap">
+        <div class="item">Teste 1</div>
+        <div class="item">Teste 2</div>
+        <div class="item">Teste 3</div>
+
+    </section>
+
+    <h1>flex-wrap: wrap;</h1>
+    <section class="container flex-wrap">
+        <div class="item ">Teste 1</div>
+        <div class="item">Teste 2</div>
+        <div class="item item-1">Teste 3</div>
+
+    </section>
+
+    <h1>flex-wrap: wrap-reverse;</h1>
+    <section class="container flex-wrap-reverse">
+        <div class="item ">Teste 1</div>
+        <div class="item">Teste 2</div>
+        <div class="item item-1">Teste 3</div>
+    </section>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+/*O flex-flow é um atalho para as propriedades 
+flex-direction e flex-wrap. Você não verá muito
+o seu uso, pois geralmente quando mudamos o 
+flex-direction para column, mantemos o padrão do 
+flex-wrap que é nowrap.
+
+E quando mudamos o flex-wrap para wrap, mantemos o padrão 
+do flex-direction que é row.*/
+
+/*lex-flow: row nowrap;
+// Coloca o conteúdo em linha e não permite a quebra de linha.
+
+flex-flow: row wrap;
+// Coloca o conteúdo em linha e permite a quebra de linha.
+
+flex-flow: column nowrap;
+// Coloca o conteúdo em coluna e não permite a quebra de linha.*/
+
+.row-nowrap {
+	flex-flow: row nowrap;
+}
+.column-nowrap {
+	flex-flow: column nowrap;
+}
+.row-wrap {
+	flex-flow: row wrap;
+}
+
+/* Flex Container */
+.container {
+	max-width: 360px;
+	margin: 0 auto;
+	display: flex;
+	border: 1px solid #ccc;
+}
+/* Flex Item */
+.item {
+	/* O flex: 1; é necessário para que cada item se 
+    expanda ocupando o tamanho máximo do container. */
+	flex: 1;
+	margin: 5px;
+	background: orange;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+h1 {
+	text-align: center;
+	margin: 20px 0 0 0;
+	font-size: 1.25em;
+	font-weight: normal;
+}
+
+body {
+	font-family: monospace;
+	color: #333;
+}

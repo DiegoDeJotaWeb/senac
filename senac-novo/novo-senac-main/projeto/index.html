@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+
+<body>
+
+
+    <header class="display-flex space-around align-items-center bg-1">
+        <div class="display-flex justify-content ">
+            <div class="logo">LOGO</div>
+            <i class="fa-solid fa-bars btn-menu" id="fade-tela-menu" onclick="menuUser('menu')"></i>
+        </div>
+
+        <div class="display-flex space-around align-items-center  " id="menu">
+            <nav>
+                <ul class="display-flex space-between">
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Menu</a></li>
+
+
+                </ul>
+            </nav>
+
+            <button class="btn-1">Contact now</button>
+        </div>
+
+    </header>
+
+    <script>
+        /*    var btn = document.getElementById('btn-menu');
+        
+        btn.addEventListener('click', confirmaSaida)
+
+        function confirmaSaida() {
+console.log("teste");
+            var menu = document.getElementById('menu')
+            
+            menu.style.display= "flex!important";
+        }*/
+
+        function menuUser(el) {
+            console.log("teste")
+            document.getElementById(el).classList.toggle('mostrar-menu');
+            document.getElementById('fade-tela-menu').style.display = "block";
+        }
+    </script>
+
+
+
+    <section class="bg-1">
+        <div class="container">
+            <div class="section-1 text-center pAll-30 ">
+                <h1 class="titulo  pAll-30">Organic Foods Made </h1>
+                <h1>Easy & Healthy</h1>
+                <input type="text" class="pAll"><button class="btn-3"><i class="fa-solid fa-magnifying-glass"></i> Order
+                    now</button>
+                <div class="display-flex justify-center pAll-30">
+                    <div class="pAll-30">
+                        <i class="fa-regular fa-clock"></i>
+                        <p>24/7 Fresh food</p>
+                    </div>
+                    <div class="pAll-30">
+                        <i class="fa-brands fa-pagelines"></i>
+                        <p>24/7 Fresh food</p>
+                    </div>
+                    <div class="pAll-30">
+                        <i class="fa-solid fa-house-chimney"></i>
+                        <p>24/7 Fresh food</p>
+                    </div>
+                    <div class="pAll-30">
+                        <i class="fa-solid fa-truck"></i>
+                        <p>24/7 Fresh food</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="box-2 ">
+        <div class="container">
+            <div class="display-flex space-around">
+                <h3 class="item-1">Book a Table</h3>
+                <!-- <div class="display-flex align-items-center  item-2">
+            <input type="date" class="item-3"> <i class="fa-solid fa-calendar-days item-1"></i>
+        </div> -->
+                <input type="date" class="item-2 m">
+                <select name="" id="" class="item-2 m">
+                    <option value="">Texto</option>
+                </select>
+                <select name="" id="" class="item-2 m">
+                    <option value="">Texto</option>
+                </select>
+                <button class="btn-1 m item-1">Book now</button>
+            </div>
+        </div>
+    </section>
+
+    <section>
+
+        <h1 class="titulo">Organic Foods Made Easy & Healthy</h1>
+        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+        <div class="display-flex space-around" style="display: flex;
+        justify-content: space-between;
+        text-align: center;
+        padding: 10px;
+        width: 80%;
+        flex-wrap: wrap;
+        margin: 0 auto;">
+            <div class="box-1">
+                <img src="img/imagem.jpg" alt="">
+                <h5>titulo</h5>
+                <div class="display-flex align-items-center justify-center ">
+                    <div class="pAll"> <i class="fa-solid fa-utensils"></i> titulo</div>
+                    <div class="pAll"> <i class="fa-regular fa-clock"></i> 10 min</div>
+                </div>
+                <button class="btn-2">Order now</button>
+            </div>
+
+            <div class="box-1">
+                <img src="img/imagem.jpg" alt="">
+                <h5>titulo</h5>
+                <div class="display-flex align-items-center justify-center ">
+                    <div class="pAll"> <i class="fa-solid fa-utensils"></i> titulo</div>
+                    <div class="pAll"> <i class="fa-regular fa-clock"></i> 10 min</div>
+                </div>
+                <button class="btn-2">Order now</button>
+            </div>
+
+            <div class="box-1">
+                <img src="img/imagem.jpg" alt="">
+                <h5>titulo</h5>
+                <div class="display-flex align-items-center justify-center ">
+                    <div class="pAll"> <i class="fa-solid fa-utensils"></i> titulo</div>
+                    <div class="pAll"> <i class="fa-regular fa-clock"></i> 10 min</div>
+                </div>
+                <button class="btn-2">Order now</button>
+            </div>
+
+
+
+            <div class="box-1">
+                <img src="img/imagem.jpg" alt="">
+                <h5>titulo</h5>
+                <div class="display-flex align-items-center justify-center ">
+                    <div class="pAll"> <i class="fa-solid fa-utensils"></i> titulo</div>
+                    <div class="pAll"> <i class="fa-regular fa-clock"></i> 10 min</div>
+                </div>
+                <button class="btn-2">Order now</button>
+            </div>
+
+
+            <div class="box-1">
+                <img src="img/imagem.jpg" alt="">
+                <h5>titulo</h5>
+                <div class="display-flex align-items-center justify-center ">
+                    <div class="pAll"> <i class="fa-solid fa-utensils"></i> titulo</div>
+                    <div class="pAll"> <i class="fa-regular fa-clock"></i> 10 min</div>
+                </div>
+                <button class="btn-2">Order now</button>
+            </div>
+
+            <div class="box-1">
+                <img src="img/imagem.jpg" alt="">
+                <h5>titulo</h5>
+                <div class="display-flex align-items-center justify-center ">
+                    <div class="pAll"> <i class="fa-solid fa-utensils"></i> titulo</div>
+                    <div class="pAll"> <i class="fa-regular fa-clock"></i> 10 min</div>
+                </div>
+                <button class="btn-2">Order now</button>
+            </div>
+            <div class="box-1">
+                <img src="img/imagem.jpg" alt="">
+                <h5>titulo</h5>
+                <div class="display-flex align-items-center justify-center ">
+                    <div class="pAll"> <i class="fa-solid fa-utensils"></i> titulo</div>
+                    <div class="pAll"> <i class="fa-regular fa-clock"></i> 10 min</div>
+                </div>
+                <button class="btn-2">Order now</button>
+            </div>
+
+            <div class="box-1">
+                <img src="img/imagem.jpg" alt="">
+                <h5>titulo</h5>
+                <div class="display-flex align-items-center justify-center ">
+                    <div class="pAll"> <i class="fa-solid fa-utensils"></i> titulo</div>
+                    <div class="pAll"> <i class="fa-regular fa-clock"></i> 10 min</div>
+                </div>
+                <button class="btn-2">Order now</button>
+            </div>
+
+
+        </div>
+        <div class="display-flex justify-center align-items-center">
+            <button class="btn-1">Order now</button>
+        </div>
+
+    </section>
+
+
+    <section class="box-2">
+        <div class="container">
+            <div class="display-flex space-around pAll-30 ">
+                <div class="display-flex align-items-center  justify-center">
+                    <div>
+                        <h4 class="pAll">titulo</h4>
+                        <h1 class="pAll">50% OFF</h1>
+                        <p class="pAll">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        </p>
+                        <button class="btn-1">Order now</button>
+                    </div>
+                </div>
+
+                <div class="display-flex align-items-center  justify-center">
+                    <img src="img/img5.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="text-center pAll-30">
+        <h1 class="titulo  pAll-30">Organic Foods Made </h1>
+
+
+        <div class="display-flex justify-center pAll-30">
+            <div class="pAll-30">
+                <i class="fa-solid fa-briefcase"></i>
+                <p>24/7 Fresh food</p>
+            </div>
+            <div class="pAll-30">
+                <i class="fa-solid fa-user"></i>
+                <p>24/7 Fresh food</p>
+            </div>
+            <div class="pAll-30">
+                <i class="fa-solid fa-users"></i>
+                <p>24/7 Fresh food</p>
+            </div>
+            <div class="pAll-30">
+                <i class="fa-solid fa-trophy"></i>
+                <p>24/7 Fresh food</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="box-2">
+        <h1 class="titulo  pAll-30 ">Titulo</h1>
+        <div class="slide-container swiper">
+            <div class="slide-content">
+                <div class="card-wrapper swiper-wrapper">
+
+                    <div class="card swiper-slide">
+                        <div class="display-flex">
+                            <div class="image-content item-1">
+                                <img src="img/imagem.jpg" alt="">
+                            </div>
+
+                            <div class="card-content item-2">
+                                <h2 class="">David Dell</h2>
+                                <p class="">The lorem text the section that contains header with having open
+                                    functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <div class="display-flex">
+                            <div class="image-content item-1">
+                                <img src="img/imagem.jpg" alt="">
+                            </div>
+
+                            <div class="card-content item-2">
+                                <h2 class="">David Dell</h2>
+                                <p class="">The lorem text the section that contains header with having open
+                                    functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <div class="display-flex">
+                            <div class="image-content item-1">
+                                <img src="img/imagem.jpg" alt="">
+                            </div>
+
+                            <div class="card-content item-2">
+                                <h2 class="">David Dell</h2>
+                                <p class="">The lorem text the section that contains header with having open
+                                    functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <div class="display-flex">
+                            <div class="image-content item-1">
+                                <img src="img/imagem.jpg" alt="">
+                            </div>
+
+                            <div class="card-content item-2">
+                                <h2 class="">David Dell</h2>
+                                <p class="">The lorem text the section that contains header with having open
+                                    functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+            <!-- <div class="swiper-pagination"></div> -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="display-flex space-around">
+            <div>
+                <h1>Titulo</h1>
+                <ul>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                 
+                </ul>
+            </div>
+
+            <div>
+                <h1>Titulo</h1>
+                <ul>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h1>Titulo</h1>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-dog icon-menu"></i> titulo </a></li>
+                    <li><a href="#"></a><i class="fa-solid fa-dog icon-menu"></i> titulo </a></li>
+                    <li><a href="#"></a><i class="fa-solid fa-dog icon-menu"></i> titulo </a></li>
+                    <li><a href="#"></a><i class="fa-solid fa-dog icon-menu"></i> titulo </a></li>
+                    <li><a href="#"></a><i class="fa-solid fa-dog icon-menu"></i> titulo </a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h1>Titulo</h1>
+                <div class="display-flex redes">
+                    <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-google-plus"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class=" bg-1 ">
+            <div class="container">
+                <div class="footer-linha display-flex justify-content  align-items-center">
+                    <p class="justify-start">&copy; 2019 Restauranty. All Rights Reserved</p>
+                    <div class="display-flex justify-end">
+
+                        <i class="fa-regular fa-credit-card "></i>
+                        <i class="fa-regular fa-credit-card "></i>
+                        <i class="fa-regular fa-credit-card "></i>
+                        <i class="fa-regular fa-credit-card "></i>
+                        <i class="fa-regular fa-credit-card "></i>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a342c01441.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+ <script src="js/script.js"></script>
+</body>
+
+</html>
