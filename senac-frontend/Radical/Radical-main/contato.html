@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta nome="viewport" content="width=device-width, initial-scale=1">
+    <title>Mova-se</title>
+    <!-- Ícone de favorito-->
+
+    <link rel="icon" href="imagem/" sizes="64x64">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="httpsfonts.googleapis.comcss2family=Mouse+Memoirs&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="topo">
+        <h1>
+            <a href="index.html"><img id="logo-topo" src="imagem/logo.png" alt=""></a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pacotes.html">Pacotes</a></li>
+                <li><a href="acessorios.html">Acessórios</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="conteudo">
+        <div class="conteudo-info" id="conteudo-contato">
+            <article class="cont-contato">
+                <div class="formulario">
+                    <h2 class="titulo">contato</h2>
+
+                    <p>Preencha os campos abaixo para entrar em contato com nossa equipe de atendimento.</p>
+                    <form action="" id="form-contato" method="POST">
+
+                        <p>
+                            <label for="nome">Nome:</label>
+                            <input tabindex="5" required type="text" id="nome" name="nome">
+                        </p>
+
+                        <p>
+                            <label for="email">E-mail:</label>
+                            <input tabindex="6" required type="email" id="email" name="email">
+                        </p>
+
+                        <p>
+                            <label for="telefone">Telefone:</label>
+                            <input tabindex="7" type="tel" id="telefone" name="telefone">
+                        </p>
+
+                        <p>
+                            <label for="assunto">Assunto:</label>
+                            <input tabindex="8" required type="text" id="assunto" name="assunto">
+                        </p>
+
+                        <p>
+                            <label for="mensagem">Mensagem:</label>
+                            <textarea tabindex="9" name="mensagem" id="mensagem" cols="50" rows="6"></textarea>
+                        </p>
+                        <button tabindex="11" id="limpar" name="limpar" type="reset">Limpar campos</button>
+                        <button tabindex="10" id="enviar" name="enviar">Enviar dados</button>
+                    </form>
+                </div>
+            </article>
+            <article class="cont-contato">
+
+                <div class="localizacao">
+                    <h2 class="titulo">LOCALIZAÇÃO</h2>
+                    <p> Rua Tito, 54 - Vila Romana</p>
+                    <p> CEP: 05051-000 - São Paulo</p>
+                    <p>Telefone: (11) 2888-5500</p>
+                    <p>E-mail: lapatito@sp.senac.br.</p>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.1225686689518!2d-46.691815399999996!3d-23.528093600000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef8775663b04f%3A0x923835e9005f8309!2sSenac%20Lapa%20Tito!5e0!3m2!1spt-BR!2sbr!4v1659637822304!5m2!1spt-BR!2sbr"width="400" height="350" style="border:0;" allowfullscreen="" loading="lazy"referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </article>
+        </div>
+    </main>
+    <footer class="rodape">
+        <div id="rodape-conteudo">
+            <div id="logo-rodape"><img src="imagem/logo.png" alt=""></a></div>
+            <div class="menu-rodape">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="terrestre.html">Terrestre</a></li>
+                    <li><a href="montanha.html">Montanha</a></li>
+                    <li><a href="aquatico.html">Aquático</a></li>
+                    <li><a href="aereo.html">Aéreo</a></li>
+                </ul>
+            </div>
+            <div class="menu-rodape">
+                <ul>
+                    <li><a href="pacotes.html">Pacotes</a></li>
+                    <li><a href="acessorios.html">Acessórios</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div class="redes">
+                <ul>
+                    <li><img src="imagem/facebook.png" alt="Logo facebook"></li>
+                    <li><img src="imagem/insta.png" alt="Logo Instagram"></li>
+                    <li><img src="imagem/youtube.png" alt="Logo Youtube"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="assinatura">
+            <p>@ Site Academico | Todos os direitos reservados | SENAC - TITO</p>
+            <p>Desenvolvido Por Marcelo N.Aggio | 2022</p>
+        </div>
+    </footer>
+</body>
+
+</html>

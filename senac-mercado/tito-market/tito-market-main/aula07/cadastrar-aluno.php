@@ -1,0 +1,27 @@
+<?php
+
+
+include_once("conexao.php");
+
+$nome = $_POST['nome'];
+$sobrenome = $_POST['sobrenome'];
+$dataNasc = $_POST['data-nasc'];
+$genero = $_POST['genero'];
+
+
+if ($nome != "" && $sobrenome != "" && $dataNasc != "" && $genero != "") {
+    $query = "INSERT INTO tbl_alunos(`nome`, `sobrenome`,`data_nascimento`, `genero`, `situacao`) 
+    VALUES ('$nome', '$sobrenome', '$dataNasc', '$genero', 'A')";
+
+$inserir = mysqli_query($conexao, $query);
+
+
+
+
+if ($inserir) {
+    echo "cadastro efetuado com sucesso";
+} else {
+    echo "Ops, não foi possivel cadastrar o aluno";
+}
+
+}
