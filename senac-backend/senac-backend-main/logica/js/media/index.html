@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 80%;
+            margin: 60px auto;
+        }
+        .col-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 15px;
+            column-gap: 15px;
+        }
+
+        .col-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            row-gap: 15px;
+            column-gap: 15px;
+        }
+
+        .caixa-form {
+            width: 100%;
+        }
+
+        .caixa-form label,
+        .caixa-form input {
+            width: 100%;
+            height: 30px;
+            margin: 10px 0;
+        }
+
+        .caixa-form input{
+            border-radius: 4px;
+        }
+        hr{
+            margin: 15px 0;
+        }
+
+        #res{
+            width: 100%;
+            text-align: center;
+            padding: 15px 0;
+            /* background-color: rgb(221, 92, 92); */
+        }
+
+        #erro{
+            background-color: rgb(221, 92, 92);
+        }
+    </style>
+
+   
+</head>
+
+<body>
+    <div class="container">
+
+    <h1>Média aluno</h1>
+
+    <hr>
+
+    <form action="" method="post" id="form-bimestre">
+        <div class="col-2">
+            <div class="caixa-form">
+
+                <label for="">Nome do aluno</label>
+                <input type="text" id="nome">
+            </div>
+            <div class="caixa-form">
+
+                <label for="">Disciplina</label>
+                <input type="text" id="disciplina">
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="caixa-form">
+
+                <label for="">BIM1</label>
+                <input type="text" id="nota1">
+            </div>
+            <div class="caixa-form">
+
+                <label for="">BIM2</label>
+                <input type="text" id="nota2">
+            </div>
+            <div class="caixa-form">
+
+                <label for="">BIM3</label>
+                <input type="text" id="nota3">
+            </div>
+            <div class="caixa-form">
+
+                <label for="">BIM4</label>
+                <input type="text" id="nota4">
+            </div>
+        </div>
+
+        <button type="submit" id="" class="btn">Calcular</button>
+    </form>
+
+    <div id="res"></div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+
+</html>

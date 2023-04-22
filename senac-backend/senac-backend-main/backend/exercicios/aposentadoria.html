@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- Uma empresa quer verificar se um empregado está qualificado para a aposentadoria ou não. Para estar em condições, um dos
+seguintes requisitos deve ser satisfeito: - Ter no mínimo 65 anos de idade. - Ter trabalhado no mínimo 30 anos. - Ter no
+mínimo 60 anos e ter trabalhado no mínimo 25 anos. Com base nas informações acima, faça um algoritmo que leia: o número
+do empregado (código), o ano de seu nascimento e o ano de seu ingresso na empresa. O programa deverá escrever a idade e
+o tempo de trabalho do empregado e a mensagem 'Requerer aposentadoria' ou 'Não requerer'; -->
+
+<!-- screva um algoritmo que permita a leitura dos nomes de 10 pessoas e armazene os nomes lidos em um vetor. 
+    Após isto, o algoritmo deve permitir a leitura de mais 1 nome qualquer de pessoa e depois escrever a mensagem 
+    ACHEI, se o nome estiver entre os 10 nomes lidos anteriormente (guardados no vetor), ou NÃO ACHEI caso contrário; -->
+
+<!-- Escreva um algoritmo que permita a leitura das notas de uma turma de 10 alunos. Calcular a média da turma e contar
+quantos alunos obtiveram nota acima desta média calculada. Escrever a média da turma e o resultado da contagem; -->
+
+
+<!-- Faça um algoritmo para ler o código e o preço de 15 produtos, calcular e escrever:  
+- o maior preço lido  
+- a média aritmética dos preços dos produtos -->
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form id="form-aposentadoria">
+        <input type="text" name="codigo">
+        <input type="text" name="dtNascimento">
+        <input type="text" name="dtIngresso">
+
+
+        <button id="btn-aposentadoria">Calcular</button>
+    </form>
+
+    <p id="resul"></p>
+
+
+    <script>
+
+        var form = document.getElementById('form-aposentadoria');
+        var btnAposentadoria = document.getElementById('btn-aposentadoria');
+        var resul = document.getElementById('resul');
+
+        btnAposentadoria.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            var codigo = form.codigo.value;
+            var dtNascimento = Number(form.dtNascimento.value);
+            var dtIngresso = Number(form.dtIngresso.value);
+
+            var dataAtual = new Date();
+            var anoAtual = dataAtual.getFullYear();
+            console.log(anoAtual);
+
+            var idade = Number(anoAtual) - dtNascimento;
+            var qtdIngresso = Number(anoAtual) - dtIngresso;
+
+            console.log(idade);
+
+           
+            if (idade >= 65 || qtdIngresso >= 30 || idade >=60 &&  qtdIngresso >=25) {
+                // console.log("Requerer aposentadoria");
+
+                resul.innerHTML = `Codigo do funcionario: ${codigo} <br>Idade: ${idade} <br> Tempo de trabalho: ${qtdIngresso} <br> Requerer aposentadoria`;
+            } else {
+                // console.log("Não requerer");
+                resul.innerHTML = `Codigo do funcionario: ${codigo} <br> Idade: ${idade} <br> Tempo de trabalho: ${qtdIngresso} <br> Não requerer`;
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>

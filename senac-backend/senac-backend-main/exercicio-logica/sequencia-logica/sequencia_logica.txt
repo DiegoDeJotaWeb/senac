@@ -1,0 +1,7 @@
+numeroPedido:inteiro
+mesa:inteiro
+horaChegada:caracter
+horaSaida:caracter 
+data:caracter 
+pedido:caracter 
+registroGraçom:real

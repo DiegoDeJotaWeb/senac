@@ -1,0 +1,35 @@
+transporte
+alimentação
+escola
+
+atividade I
+
+desenvolva uma sequencia lógica, um fluxograma um pseudocodigo e um algoritimo, para uma parte de um sistema de um dos temas acima
+
+- Pedidos 
+
+numeroPedido:inteiro
+mesa:inteiro
+horaChegada:caracter
+horaSaida:caracter 
+data:caracter 
+pedido:caracter 
+registroGraçom:real
+
+
+
+- Recibo
+
+numeroPedido:inteiro
+mesa:inteiro
+horaChegada:caracter
+horaSaida:caracter 
+data:caracter 
+valor:real
+
+
+
+
+
+
+

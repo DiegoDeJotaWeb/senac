@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+
+<!-- escreva um algoritmo que permita a leitura dos nomes de 10 pessoas e armazene os nomes lidos em um vetor. 
+    Após isto, o algoritmo deve permitir a leitura de mais 1 nome qualquer de pessoa e depois escrever a mensagem 
+    ACHEI, se o nome estiver entre os 10 nomes lidos anteriormente (guardados no vetor), ou NÃO ACHEI caso contrário; -->
+
+<!-- Escreva um algoritmo que permita a leitura das notas de uma turma de 10 alunos. Calcular a média da turma e contar
+quantos alunos obtiveram nota acima desta média calculada. Escrever a média da turma e o resultado da contagem; -->
+
+
+<!-- Faça um algoritmo para ler o código e o preço de 15 produtos, calcular e escrever:  
+- o maior preço lido  
+- a média aritmética dos preços dos produtos -->
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form id="form-nomes" action="#">
+        <input type="text" name="nome">
+        <input type="text" name="busca">
+
+
+        <button id="btn-nomes-cadastro" type="submit">Cadastrar</button>
+
+        <button id="btn-nomes-busca" type="button">Buscar</button>
+    </form>
+
+    <p id="resul"></p>
+
+
+    <script>
+
+        var form = document.getElementById('form-nomes');
+        var btnNomeCadastro = document.getElementById('btn-nomes-cadastro');
+
+        var btnNomeBusca = document.getElementById('btn-nomes-busca');
+
+
+        var resul = document.getElementById('resul');
+
+        var pessoas = [];
+
+
+
+        btnNomeCadastro.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            pessoas.push(form.nome.value);
+            console.log(pessoas)
+
+        });
+
+        btnNomeBusca.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            let buscaPessoa = form.busca.value;
+
+            for (let i = 0; i < pessoas.length; i++) {
+                console.log(pessoas[i]);
+                if (pessoas.indexOf(pessoas[i]) > 0) {
+                    // console.log("achou");
+                    buscaPessoa = "";
+                    console.log(pessoas.indexOf(pessoas[i]));
+                    resul.innerHTML = "Achou";
+                
+                }
+                 else if(buscaPessoa == ""){
+                    resul.innerHTML = "não achou";
+                } else {
+                    // console.log("não achou");
+                    buscaPessoa = "";
+                    resul.innerHTML = "não achou";
+                }
+
+            }
+        });
+    </script>
+
+</body>
+
+</html>

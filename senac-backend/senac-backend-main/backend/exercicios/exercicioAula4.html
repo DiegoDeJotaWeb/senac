@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submissão de Formularios</title>
+
+    <style>
+        h1{
+            text-align: center;
+        }
+        .container{
+            width: 85%;
+            margin: 0 auto;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Formulario de Envio</h1> 
+    <hr>
+    <form action="exercicioAula04-receber.php" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome">
+
+        <label for="sobrenome">Sobrenome:</label>
+        <input type="text" name="sobrenome">
+
+        <label for="email">E-mail</label>
+        <input type="email" name="email">
+
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha">
+
+        <button>Cadastrar</button>
+    </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de veiculo</title>
+</head>
+<body>
+
+    <form action="" id="form-calculo">
+        <label for="">Valor de fabrica</label>
+        <input type="text" name="valorFabrica">
+
+        <label for="">Digite a porcentagem do distribuidor</label>
+        <input type="text" name="percentualDistribuidor">
+
+        <label for="">Digite o imposto aplicado ao custo de fábrica em porcentagem</label>
+        <input type="text" name="imposto">
+
+        <button type="submit">Calcular</button>
+    </form>
+
+    <p>Valor final para o consulmidor: <span id="total"></span></p>
+
+
+    <script>
+let form = document.getElementById("form-calculo");
+let total = document.getElementById("total");
+
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    valorFabrica = Number(form.valorFabrica.value);
+    percentualDistribuidor = Number(form.percentualDistribuidor.value);
+    imposto = Number(form.imposto.value);
+
+    calculoDistribuidor = ((percentualDistribuidor/100)*valorFabrica);
+    calculoImposto = ((imposto/100)*valorFabrica);
+
+    valorFinal= valorFabrica+calculoDistribuidor+calculoImposto;
+
+    total.innerHTML = "R$ "+ valorFinal;
+
+
+})
+    </script>
+
+    
+</body>
+</html>

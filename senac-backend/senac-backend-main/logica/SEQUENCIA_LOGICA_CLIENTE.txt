@@ -1,0 +1,22 @@
+Caracter - Nome completo
+Caracter - CPF
+Caracter - Data Nascimento
+inteiro - RG
+caracter - Orgão Emissor
+Caracter - Data Expedição
+caracter - Nacionalidade
+caracter - Genero
+caracter - CEP
+caracter - Logradouro
+inteiro - Nº
+caracter - Complemento
+caracter - Bairro
+caracter - Cidade
+caracter - UF
+caracter - E-mail
+caracter - Celular
+logico - Acessibilidade
+
+
+
+

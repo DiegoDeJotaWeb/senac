@@ -1,0 +1,31 @@
+Caracter - Nome completo
+Caracter - CPF
+Caracter - Data Nascimento
+inteiro - RG
+caracter - Orgão Emissor
+Caracter - Data Expedição
+caracter - Nacionalidade
+caracter - Genero
+caracter - CEP
+caracter - Logradouro
+inteiro - Nº
+caracter - Complemento
+caracter - Bairro
+caracter - Cidade
+caracter - UF
+caracter - E-mail
+caracter - Celular
+caracter - cnh
+caracter - Data de vencimento da CNH
+caracter - Placa do carro
+caracter - modelo do carro
+caracter - cor do carro
+inteiro - ano do carro
+caracter - CRV
+caracter - CRLV
+caracter - senha de acesso
+logico - Acessibilidade
+
+
+
+

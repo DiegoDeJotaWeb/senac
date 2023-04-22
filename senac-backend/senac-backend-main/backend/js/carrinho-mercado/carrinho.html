@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row text-center">
+            <h1>Carrinho de compras</h1>
+        </div>
+        <form action="#" method="POST" id="form-carrinho">
+            <div class="row">
+                <div class="mb-3 col-md-3">
+                    <label class="form-label">Nome do prodruto</label>
+                    <input type="text" class="form-control" name="nomeProdruto">
+                </div>
+
+                <div class="mb-3  col-md-3">
+                    <label class="form-label">Quantidade</label>
+                    <input type="text" class="form-control" name="quantidadeProdruto">
+                </div>
+                <div class="mb-3  col-md-3">
+                    <label class="form-label">Valor</label>
+                    <input type="text" class="form-control" name="valorProdruto">
+                </div>
+
+                <!-- <div class="mb-3  col-md-3">
+                    <label class="form-label">Desconto</label>
+                    <input type="text" class="form-control" name="desconto">
+                </div> -->
+
+                <div class="mb-3 col-md-3">
+                    <button class="btn btn-primary"> Incluir</button>
+                    
+                </div>
+
+          
+            </div>
+        </form>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Quantidade</th>
+                    <th scope="col">Valor</th>
+                    <!-- <th scope="col">Desconto</th> -->
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody id="total"></tbody>
+        </table>
+    </div>
+
+
+
+
+    <script src="js/carrinhoCompras.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

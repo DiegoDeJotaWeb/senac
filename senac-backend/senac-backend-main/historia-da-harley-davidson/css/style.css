@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'harley';
+    src: url('../fontes/deftone stylus.ttf') format('truetype');
+   
+    font-weight: normal;
+    font-style: normal;
+}
+p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: normal;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    line-height: 60px;
+    padding: 0 10px;
+}
+
+header {
+    height: 60px;
+    line-height: 60px;
+    background-color: black;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom:2px solid #fa750e ;
+}
+
+a{
+ text-decoration: none;
+ color: black;
+}
+
+a:hover{
+    color: #fa750e;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu li a{
+     text-decoration: none;
+     color: white;
+}
+
+.menu li a:hover{
+     text-decoration: none;
+     color: #fa750e;
+}
+
+.col-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 15px;
+    column-gap: 15px;
+
+}
+
+.col-8-2{
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+    row-gap: 15px;
+    column-gap: 15px;
+
+}
+
+.text-center{
+    text-align: center;
+}
+
+.ml {
+    margin-left: 15px;
+}
+
+.mb {
+    margin-bottom: 15px;
+}
+
+
+.mr {
+    margin-right: 15px;
+}
+
+.mt {
+    margin-top: 15px;
+}
+
+.titulo {
+    color: #fa750e;
+    font-family: 'Figtree', sans-serif;
+    text-transform:uppercase;
+     
+}
+
+.logo p{
+    font-size: 30px;
+    font-family: 'harley';  
+}
+footer {
+    margin-top: 15px;
+    background-color: black;
+    text-align: center;
+    width: 100%;
+    color: white;
+    line-height: 40px;
+}
+
+img{
+    width: 100%;
+}
+
+.col-4{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 15px;
+    row-gap: 15px;
+}
+
+#menu.block {
+    display: block;
+}
+
+#menu {
+    display: block;
+}
+
+#icon-menu {
+    display: none;
+}
+
+/* contato */
+
+label {
+    width: 100%;
+}
+
+input {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+button {
+    padding: 15px;
+    background-color: #fa750e;
+    color: white;
+    font-size: 16px;
+    border: 0;
+    border-radius: 10px;
+}
+
+button:hover {
+    
+    background-color: #000;
+    color: white;
+   
+}
+@media only screen and (max-width: 600px) {
+    /* menu */
+    #menu {
+    display: none;
+}
+
+#icon-menu {
+    display: block;
+}
+
+nav ul li {
+display: block;
+}
+
+nav{
+    background-color: black;
+}
+
+
+/* galeria */
+
+.col-4 {
+
+grid-template-columns: 1fr ;
+}
+
+/* contato */
+
+.col-2 {
+
+    grid-template-columns: 1fr ;
+    }
+
+    /* index */
+
+    .col-8-2{
+        
+        grid-template-columns: 1fr;
+        
+    
+    }
+
+}
