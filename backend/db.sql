@@ -87,7 +87,7 @@ select * FROM compra WHERE numeroNota BETWEEN 100 AND 102;
 
 SELECT nome FROM cliente
 WHERE nome BETWEEN "Diego" AND "Marcelo";
-
+-- fdfdf
 SELECT  DISTINCT  nome FROM cliente where nome not like "D%";
 
 SELECT *
