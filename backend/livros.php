@@ -50,6 +50,7 @@ if (strlen($busca) < 2) {
                         <td><?php echo $dados["autor"]; ?></td>
                         <td><?php echo $dados["paginas"]; ?></td>
                         <td><?php echo $dados["preco"]; ?></td>
+                        <td><a href="atualizar.php?isbn=<?php echo $dados["isbn"]; ?>">alterar</a></td>
                     </tr>
                 <?php } ?>
             </tbody>

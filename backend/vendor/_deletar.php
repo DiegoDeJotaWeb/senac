@@ -15,7 +15,7 @@ echo $mensagem;
 $result = mysqli_query($conn, "SELECT * FROM livros WHERE isbn = '" . $_POST['isbn'] . "'");
 
 ?>
-<div class="container">
+<!-- <div class="container">
         <table class="table">
             <thead>
                 <tr>
@@ -28,18 +28,20 @@ $result = mysqli_query($conn, "SELECT * FROM livros WHERE isbn = '" . $_POST['is
             </thead>
 
             <tbody>
-                <?php while ($dados = $result->fetch_array()) { ?>
+                <?php // while ($dados = $result->fetch_array()) { ?>
                     <tr>
-                        <td><?php echo $dados["isbn"]; ?></td>
-                        <td><?php echo $dados["titulo"]; ?></td>
-                        <td><?php echo $dados["autor"]; ?></td>
-                        <td><?php echo $dados["paginas"]; ?></td>
-                        <td><?php echo $dados["preco"]; ?></td>
+                        
+                        <td><?php // echo $dados["isbn"]; ?></td>
+                        <td><?php // echo $dados["titulo"]; ?></td>
+                        <td><?php // echo $dados["autor"]; ?></td>
+                        <td><?php // echo $dados["paginas"]; ?></td>
+                        <td><?php // echo $dados["preco"]; ?></td>
                     </tr>
-                <?php } ?>
+                <?php // } ?>
             </tbody>
         </table>
         <p><a href="livros.html">Voltar</a></p>
-    </div>
+    </div> -->
 
-    tabnine al
+    <!-- tabnine al -->
+
