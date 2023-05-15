@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste - Tesis</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Desafio encontrar o email</h1>
+
+        <h4>As regras para encontrar o e-mail são:</h4>
+
+        <ul>
+            <li>o prefixo do e-mail se encontra no texto abaixo</li>
+            <li>o sufixo do e-mail é "@tesis.com.br"</li>
+            <li>o prefixo do e-mail é composto de : 8 letras, seguidas de um "." e mais 6 letras. Isso significa que os
+                primeiros 14 caracteres/posições que você encontrar serão utilizados em 2 partes, separados por um
+                ponto.</li>
+            <li>para encontrar os caracteres é só utilizar a sequência de Fibonacci (a partir do 1) e pegar os
+                caracteres
+                nestas posições (caso a posição se repita, apenas ignore).</li>
+
+            <li>pense na lista como um array, que começa na posição zero (que nesse caso, representa a letra A)</li>
+            <li> transforme todos os caracteres em caixa baixa antes de enviar</li>
+
+        </ul>
+
+        <p>Envie o e-mail para o endereço encontrado, e nos mande o código utilizado para localizar o e-mail.
+
+        </p>
+        <p>Dica extra: o endereço de e-mail faz sentido, então caso você encontre algo como
+            sdudsaao.pgfoir@tesis.com.br,
+            tente novamente.
+        </p>
+
+        <h4>A string é essa abaixo</h4>
+
+        <p style="word-break: break-all;">
+            AcaRQoYjlSlByityzQhvjnCNVpsaLeQPtGajQHVzbgabJuAiMHDxwfkcCwIGmZCTInlSiKvRKxAGzJsgmPeUBAReDamLzqgJgrXobzfoWiwvRPdFgJzIkSoJscWtVdEbuIRYhXOdHkayBdFIbHSyzIJtmGMhJTiFBaDIzrngCngdSnngUHFWpQpCwElHxunYWsiXKvFOkntcAHiXopTgIKkeovoLrBlPTtMfqTTAgrejUPgKeBsolCtAAjNtKBjfcAHiXopTgIKkeovoLrBlPTtMfqTTAgrejUPgKeBsolCtAAjNtKBjfcAHiXopTgIKkeovoLrBlPTtMfqTTAgrejUPgKeBsolCtAAjNtKBjfcAHiXopTgIKkeoviLrBlPTtMfqTTAgrejUPgKeBsolCtAAjNtKBjfcAHiXopTgIKkeovoLrBlPTtMfqTTAgrejUPgKeBsolCtAAjNtKBjfcAHiXopTgIKkeovoLrBlPTtMfqTTAgrejUPgKeBsolCtAAjNtKBjfcAHiXopTgIKkeovoLrBlPTtMfqTTAgrejUPgKeBsolCtAAjNtKBjfcAHiXopTgIlkeovoLrBlPTtMfqTTlgrejUPgleBsolCtAAjNtKBjfcAHiXopTgIKkeovoLrBlPTtMfqTTAgrejUPgKeBsolCtAAjNtKBjfcAHiXopTgIKkeovoLrBlPTtMfqTTAgrejUPgKeBsolCtAAjNtKBjf
+        </p>
+
+
+        <h3>Resultado</h3>
+        <p id="email"></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
