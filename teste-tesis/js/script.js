@@ -19,6 +19,7 @@ n1 = n2;
 n2 = proximo;
 proximo = n1 + n2;
 }
+
 //console.log(texto);
 
 texto.splice(8, 0, ".");
