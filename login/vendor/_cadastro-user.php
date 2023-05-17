@@ -1,6 +1,7 @@
 <?php
 include './../config/_conecta.php';
 
+
 $usuario = $_POST['usuario'];
 $senha = $_POST['senha'];
 
@@ -27,3 +28,5 @@ if (empty($usuario) || empty($senha)) {
         }
     }
 }
+
+

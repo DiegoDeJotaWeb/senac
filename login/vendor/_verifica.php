@@ -2,7 +2,7 @@
 
 include_once './../config/_conecta.php';
 
-echo $_POST['usuario'];
+
 if (isset($_POST['usuario']) || isset($_POST['senha'])) {
     // if (isset($_POST['usuario'])) {
     //     echo "Preencha o campo email";
@@ -16,7 +16,7 @@ if (isset($_POST['usuario']) || isset($_POST['senha'])) {
         $sql_query = $conn->query($sql) or die('Falha no login!');
 
         $qtd = $sql_query->num_rows;
-        echo $qtd;
+       
 
         if ($qtd == 1) {
             $user = $sql_query->fetch_assoc();
@@ -28,7 +28,10 @@ if (isset($_POST['usuario']) || isset($_POST['senha'])) {
             $_SESSION['id'] = $user['idUser'];
             $_SESSION['nome'] = $user['nomeUser'];
 
-            header("Location: ./../painel.php");
+        
+            echo $_SESSION['nome'];
+
+       header("Location: ./../painel.php");
         }
     }
 // } 
