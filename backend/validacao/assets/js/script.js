@@ -27,5 +27,24 @@ function validar_dados() {
         alert("A senha deve conter entre 5 e 15 caracteres");
         return false;
     }
+
+    if(nomeForm.login.value.indexOf(' ', 0) != -1) {
+        alert("O login não pode conter espaços em branco");
+        return false;
+    }
+
+    if (nomeForm.senha.value.length < 5 || nomeForm.senha.value.length > 15){
+        alert("A senha contar entre 5 e 15 caracteres");
+    }
     
+    if(nomeForm.senha.value.indexOf('',0) != -1){
+        alert("A senha não pode conter espaços em branco");
+        return false;
+    }
+
+    if(nomeForm.senha.value != nomeForm.confirmacao.value){
+        alert("Senhas não conferem. você digitou duas senhas diferentes");
+        return false;
+    }
 }
+
