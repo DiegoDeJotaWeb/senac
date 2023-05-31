@@ -26,11 +26,6 @@ $usuarios = $class->verTudo();
 $userId = $_SESSION['id_admin'];
 $userNome = $class->ver($userId)['nomeUsuario'];
 $avatarNome = $class->ver($userId)['avatarUsuario'];
-
-// $class = new User();
-// $class->login();
-
-
 ?>
 
 
@@ -46,6 +41,11 @@ $avatarNome = $class->ver($userId)['avatarUsuario'];
     <style>
         .avatar {
             width: 50px;
+        }
+
+        nav {
+            background: linear-gradient(100deg, #ffe53bd8, #ff2525da);
+            box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
         }
     </style>
 </head>
@@ -76,6 +76,9 @@ $avatarNome = $class->ver($userId)['avatarUsuario'];
             </div>
         </div>
     </nav>
+
+    <h1 class="text-center py-5">Todos os usuários</h1>
+
 
     <div class="container">
         <table class="table">

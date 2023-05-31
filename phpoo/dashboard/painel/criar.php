@@ -22,6 +22,10 @@ $userAvatar = $usuario->ver($userId)['avatarUsuario'];
         .avatar {
             width: 50px;
         }
+        nav {
+            background: linear-gradient(100deg, #ffe53bd8, #ff2525da);
+            box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
+        }
     </style>
 </head>
 
@@ -52,7 +56,7 @@ $userAvatar = $usuario->ver($userId)['avatarUsuario'];
         </div>
     </nav>
 
-    <h1 class="text-center py-5">Criar usuario</h1>
+    <h1 class="text-center py-5">Criar usuário</h1>
 
     <div class="container">
         <form action="index.php" method="POST" enctype="multipart/form-data">

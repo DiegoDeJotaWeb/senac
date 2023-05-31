@@ -19,6 +19,7 @@ $nome = $usuario->ver($_POST['id'])['nomeUsuario'];
 $email = $usuario->ver($_POST['id'])['emailUsuario'];
 $senha = $usuario->ver($_POST['id'])['senhaUsuario'];
 $idnome = $usuario->ver($_POST['id'])['idUsuario'];
+$avatar = $usuario->ver($_POST['id'])['avatarUsuario'];
 
 $salt = md5($email . $senha);
 $custo = "06";
@@ -41,6 +42,10 @@ $senhaHash = crypt($senha, "$2b$" . $custo . "$" . $salt . "$");
     <style>
         .avatar {
             width: 50px;
+        }
+        nav {
+            background: linear-gradient(100deg, #ffe53bd8, #ff2525da);
+            box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
         }
     </style>
 </head>
@@ -72,7 +77,7 @@ $senhaHash = crypt($senha, "$2b$" . $custo . "$" . $salt . "$");
         </div>
     </nav>
 
-    <h1 class="text-center py-5">Editar usuario</h1>
+    <h1 class="text-center py-5">Editar usuário</h1>
 
     <div class="container">
         <form action="index.php" method="POST" enctype="multipart/form-data">
@@ -91,12 +96,12 @@ $senhaHash = crypt($senha, "$2b$" . $custo . "$" . $salt . "$");
 
             <div class="mb-3">
                 <label class="form-label">Avatar</label>
-                <input type="file" class="form-control" placeholder="Enter Name here" name="avatar" value="<?php echo $userAvatar ?>" id="img-capa" onchange="trocarCapa()">
+                <input type="file" class="form-control" placeholder="Enter Name here" name="avatar" value="<?php echo $avatar ?>" id="img-capa" onchange="trocarCapa()">
             </div>
             <input type="hidden" name="action" value="update">
             <div class="col-md-3">
                 <div class="form-floating mb-3">
-                    <img src="assets/images/<?php echo $userAvatar ?>" class="img-fluid avatar" alt="" id="target-capa">
+                    <img src="assets/images/<?php echo $avatar ?>" class="img-fluid avatar" alt="" id="target-capa">
                 </div>
             </div>
 
