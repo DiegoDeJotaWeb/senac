@@ -3,11 +3,12 @@
 require_once './class/User-class.php';
 
 require_once "./verificar.php";
-$student = new User();
+$usuario = new User();
 
 
 $userId = $_SESSION['id_admin'];
-$userNome = $student -> ver($userId)['nomeUsuario'];
+$userNome = $usuario -> ver($userId)['nomeUsuario'];
+$userAvatar = $usuario->ver($userId)['avatarUsuario'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -17,6 +18,11 @@ $userNome = $student -> ver($userId)['nomeUsuario'];
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <style>
+        .avatar{
+            width: 50px;
+        }
+    </style>
 </head>
 
 <body>
@@ -38,9 +44,10 @@ $userNome = $student -> ver($userId)['nomeUsuario'];
 
                 </ul>
                 <span class="navbar-text">
-                    <?php echo $userNome;?>
+                    <img src="./assets/images/<?= $userAvatar?>" alt="" class="img-fluid avatar">
+                   <?php echo $userNome;?>
                 </span>
-                <a href="./../logout.php">sair</a>
+                <a href="./../logout.php" class="btn btn-primary mx-4">sair</a>
             </div>
         </div>
     </nav>
@@ -48,7 +55,7 @@ $userNome = $student -> ver($userId)['nomeUsuario'];
 <h1 class="text-center py-5">Criar usuario</h1>
 
     <div class="container">
-        <form action="index.php" method="POST">
+        <form action="index.php" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
                 <label class="form-label">Nome</label>
                 <input type="text" class="form-control" name="nome">
@@ -60,6 +67,11 @@ $userNome = $student -> ver($userId)['nomeUsuario'];
             <div class="mb-3">
                 <label class="form-label">Senha</label>
                 <input type="password" class="form-control"  name="senha">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">img</label>
+                <input type="file" class="form-control"  name="avatar">
             </div>
 
             <input type="hidden" name="action" value="create">

@@ -21,10 +21,11 @@ if (isset($_POST['action'])) {
 }
 
 $class = new User();
-$students = $class->verTudo();
+$usuarios = $class->verTudo();
 
 $userId = $_SESSION['id_admin'];
 $userNome = $class->ver($userId)['nomeUsuario'];
+$avatarNome = $class->ver($userId)['avatarUsuario'];
 
 // $class = new User();
 // $class->login();
@@ -41,6 +42,12 @@ $userNome = $class->ver($userId)['nomeUsuario'];
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <style>
+        .avatar{
+            width: 50px;
+        }
+    </style>
 </head>
 
 <body>
@@ -62,9 +69,10 @@ $userNome = $class->ver($userId)['nomeUsuario'];
 
                 </ul>
                 <span class="navbar-text">
+                    <img src="./assets/images/<?= $avatarNome?>" alt="" class="img-fluid avatar">
                    <?php echo $userNome;?>
                 </span>
-                <a href="./../logout.php">sair</a>
+                <a href="./../logout.php" class="btn btn-primary mx-4">sair</a>
             </div>
         </div>
     </nav>
@@ -74,6 +82,7 @@ $userNome = $class->ver($userId)['nomeUsuario'];
             <thead>
                 <tr>
                     <th scope="col">#</th>
+                    <th scope="col">Avartar</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Email</th>
                     <th scope="col">Ação</th>
@@ -81,19 +90,20 @@ $userNome = $class->ver($userId)['nomeUsuario'];
             </thead>
             <tbody>
                 <?php
-                foreach ($students as $student) :
+                foreach ($usuarios as $usuario) :
                 ?>
                     <tr>
-                        <th scope="row"><?= $student['idUsuario']; ?></th>
-                        <td><?= $student['nomeUsuario']; ?></td>
-                        <td><?= $student['emailUsuario']; ?></td>
+                        <th scope="row"><?= $usuario['idUsuario']; ?></th>
+                        <td><img src="assets/images/<?= $usuario['avatarUsuario']; ?>" alt="" class="img-fluid avatar" ></td>
+                        <td><?= $usuario['nomeUsuario']; ?></td>
+                        <td><?= $usuario['emailUsuario']; ?></td>
                         <td>
                             <form action="editar.php" method="post" class="d-inline">
-                                <input type="hidden" name="id" value="<?= $student['idUsuario']; ?>" />
+                                <input type="hidden" name="id" value="<?= $usuario['idUsuario']; ?>" />
                                 <button class="btn btn-warning my-3">Atualizar</button>
                             </form>
 
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $student['idUsuario']; ?>">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $usuario['idUsuario']; ?>">
                                 Deletar
                             </button>
 
@@ -102,7 +112,7 @@ $userNome = $class->ver($userId)['nomeUsuario'];
                     </tr>
                     <!-- Button trigger modal -->
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModal<?= $student['idUsuario']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="exampleModal<?= $usuario['idUsuario']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -110,13 +120,13 @@ $userNome = $class->ver($userId)['nomeUsuario'];
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <?= $student['nomeUsuario']; ?>
-                                    <?= $student['emailUsuario']; ?>
+                                    <?= $usuario['nomeUsuario']; ?>
+                                    <?= $usuario['emailUsuario']; ?>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                                     <form action="index.php" method="post" class="d-inline">
-                                <input type="hidden" name="id" value="<?= $student['idUsuario']; ?>">
+                                <input type="hidden" name="id" value="<?= $usuario['idUsuario']; ?>">
                                 <input type="hidden" name="action" value="delete">
                                 <button class="btn btn-danger my-3">Excluir</button>
 
