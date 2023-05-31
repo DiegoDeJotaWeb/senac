@@ -44,7 +44,7 @@ $avatarNome = $class->ver($userId)['avatarUsuario'];
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
     <style>
-        .avatar{
+        .avatar {
             width: 50px;
         }
     </style>
@@ -69,8 +69,8 @@ $avatarNome = $class->ver($userId)['avatarUsuario'];
 
                 </ul>
                 <span class="navbar-text">
-                    <img src="./assets/images/<?= $avatarNome?>" alt="" class="img-fluid avatar">
-                   <?php echo $userNome;?>
+                    <img src="./assets/images/<?= $avatarNome ?>" alt="" class="img-fluid avatar">
+                    <?php echo $userNome; ?>
                 </span>
                 <a href="./../logout.php" class="btn btn-primary mx-4">sair</a>
             </div>
@@ -94,7 +94,7 @@ $avatarNome = $class->ver($userId)['avatarUsuario'];
                 ?>
                     <tr>
                         <th scope="row"><?= $usuario['idUsuario']; ?></th>
-                        <td><img src="assets/images/<?= $usuario['avatarUsuario']; ?>" alt="" class="img-fluid avatar" ></td>
+                        <td><img src="assets/images/<?= $usuario['avatarUsuario']; ?>" alt="" class="img-fluid avatar"></td>
                         <td><?= $usuario['nomeUsuario']; ?></td>
                         <td><?= $usuario['emailUsuario']; ?></td>
                         <td>
@@ -107,7 +107,7 @@ $avatarNome = $class->ver($userId)['avatarUsuario'];
                                 Deletar
                             </button>
 
-                           
+
                         </td>
                     </tr>
                     <!-- Button trigger modal -->
@@ -126,13 +126,13 @@ $avatarNome = $class->ver($userId)['avatarUsuario'];
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                                     <form action="index.php" method="post" class="d-inline">
-                                <input type="hidden" name="id" value="<?= $usuario['idUsuario']; ?>">
-                                <input type="hidden" name="action" value="delete">
-                                <button class="btn btn-danger my-3">Excluir</button>
+                                        <input type="hidden" name="id" value="<?= $usuario['idUsuario']; ?>">
+                                        <input type="hidden" name="action" value="delete">
+                                        <button class="btn btn-danger my-3">Excluir</button>
 
 
 
-                            </form>
+                                    </form>
                                 </div>
                             </div>
                         </div>

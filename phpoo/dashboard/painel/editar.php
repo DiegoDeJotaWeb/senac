@@ -39,7 +39,7 @@ $senhaHash = crypt($senha, "$2b$" . $custo . "$" . $salt . "$");
     <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <style>
-        .avatar{
+        .avatar {
             width: 50px;
         }
     </style>
@@ -64,8 +64,8 @@ $senhaHash = crypt($senha, "$2b$" . $custo . "$" . $salt . "$");
 
                 </ul>
                 <span class="navbar-text">
-                    <img src="./assets/images/<?= $userAvatar?>" alt="" class="img-fluid avatar">
-                   <?php echo $userNome;?>
+                    <img src="./assets/images/<?= $userAvatar ?>" alt="" class="img-fluid avatar">
+                    <?php echo $userNome; ?>
                 </span>
                 <a href="./../logout.php" class="btn btn-primary mx-4">sair</a>
             </div>
@@ -100,7 +100,7 @@ $senhaHash = crypt($senha, "$2b$" . $custo . "$" . $salt . "$");
                 </div>
             </div>
 
-            
+
             <input type="text" name="id" value="<?= $idnome; ?>">
             <button type="submit" class="btn btn-primary">Editar</button>
         </form>
@@ -110,23 +110,23 @@ $senhaHash = crypt($senha, "$2b$" . $custo . "$" . $salt . "$");
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script>
-                function trocarCapa() {
-                    var target = document.getElementById('target-capa');
-                    var file = document.querySelector('#img-capa').files[0];
+        function trocarCapa() {
+            var target = document.getElementById('target-capa');
+            var file = document.querySelector('#img-capa').files[0];
 
-                    var reader = new FileReader();
+            var reader = new FileReader();
 
-                    reader.onloadend = function() {
-                        target.src = reader.result;
-                    }
+            reader.onloadend = function() {
+                target.src = reader.result;
+            }
 
-                    if (file) {
-                        reader.readAsDataURL(file);
-                    } else {
-                        target.src = "";
-                    }
-                }
-            </script>
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                target.src = "";
+            }
+        }
+    </script>
 </body>
 
 </html>

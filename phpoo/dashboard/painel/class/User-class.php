@@ -57,7 +57,6 @@ class User extends PdoConexao
 
 
     while ($row = $read->fetch(PDO::FETCH_ASSOC)) {
-      // while ($row = mysqli_fetch_array($read)) {
       $usuarios[] = $row;
     }
 
@@ -102,42 +101,40 @@ class User extends PdoConexao
       move_uploaded_file($arquivo_tmp, $destino);
     }
 
-      $salt = md5($_POST['email'] . $_POST['senha']);
-      $custo = "06";
-      $senhaHash = crypt($_POST['senha'], "$2b$" . $custo . "$" . $salt . "$");
+    $salt = md5($_POST['email'] . $_POST['senha']);
+    $custo = "06";
+    $senhaHash = crypt($_POST['senha'], "$2b$" . $custo . "$" . $salt . "$");
 
-      if ($_POST['senha'] == "" && $_FILES['avatar']['name'] == '') {
-        $sql = "update usuarios set 
+    if ($_POST['senha'] == "" && $_FILES['avatar']['name'] == '') {
+      $sql = "update usuarios set 
       nomeUsuario = '{$_POST['nome']}', 
       emailUsuario = '{$_POST['email']}'     
       where idUsuario = '{$_POST['id']}'";
-        $database->query($sql);
-      } 
-      elseif ($_FILES['avatar']['name'] == "") {
-        $sql = "update usuarios set 
+      $database->query($sql);
+    } elseif ($_FILES['avatar']['name'] == "") {
+      $sql = "update usuarios set 
       nomeUsuario = '{$_POST['nome']}', 
       emailUsuario = '{$_POST['email']}',
       senhaUsuario = '$senhaHash'   
       where idUsuario = '{$_POST['id']}'";
-        $database->query($sql);
-      }elseif  ($_POST['senha'] == "") {
-        $sql = "update usuarios set 
+      $database->query($sql);
+    } elseif ($_POST['senha'] == "") {
+      $sql = "update usuarios set 
       nomeUsuario = '{$_POST['nome']}', 
       emailUsuario = '{$_POST['email']}',
       avatarUsuario = '{$avatar}'      
       where idUsuario = '{$_POST['id']}'";
-        $database->query($sql);
-      }  else {
-        $sql = "update usuarios set 
+      $database->query($sql);
+    } else {
+      $sql = "update usuarios set 
       nomeUsuario = '{$_POST['nome']}', 
       emailUsuario = '{$_POST['email']}', 
       senhaUsuario = '$senhaHash',
       avatarUsuario = '{$avatar}'
       
       where idUsuario = '{$_POST['id']}'";
-        $database->query($sql);
-      }
-   
+      $database->query($sql);
+    }
   }
 
   public function deletar()
@@ -194,15 +191,11 @@ class User extends PdoConexao
     @session_start();
     $email = $_POST['email'];
     $senha = $_POST['senha'];
-    // echo $email;
-    // echo '<br>';
-    // echo $senha;
-    // echo '<br>';
+
     $salt = md5($email . $senha);
     $custo = "06";
     $senhaHash = crypt($senha, "$2b$" . $custo . "$" . $salt . "$");
-    // echo '<br>';
-    // echo $senhaHash;
+
 
     $query = $database->prepare("select * from usuarios where (emailUsuario = :email) and senhaUsuario = :senha");
 
@@ -213,10 +206,9 @@ class User extends PdoConexao
     $query->execute();
 
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
-    // $result = $query->fetch_assoc();;
-    // var_dump($result);
+
     $total_result = @count($result);
-    // print_r( $total_result."teste"); 
+
 
     if ($total_result > 0) {
       echo $_SESSION['id_admin'] = $result[0]['idUsuario'];
@@ -227,7 +219,6 @@ class User extends PdoConexao
     } else {
       echo "<script>window.alert('Dados incoretos');</script>";
       echo "<script>window.location='index.php';</script>";
-      // header('Location:index.php');
     }
   }
 }
