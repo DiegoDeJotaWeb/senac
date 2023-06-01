@@ -23,9 +23,8 @@ class User extends PdoConexao
     $read = $database->query($sqlUser);
     $result = $read->fetchAll(PDO::FETCH_ASSOC);
     $total_result = @count($result);
-    echo $total_result;
 
-    if ($total_result > 0) {
+    if ($total_result < 1) {
       $ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
 
       if ($ext == 'jpg' || $ext == 'png') {
