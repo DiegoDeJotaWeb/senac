@@ -13,78 +13,49 @@ class User extends PdoConexao
 
   public function criar()
   {
-    parent::getInstancia();
+   
     $database = PdoConexao::getInstancia();
 
     $database = $this->getInstancia();
 
-    $sqlUser = "select * from usuarios where emailUsuario = '{$_POST['email']}'";
+    $salt = md5($_POST['email'] . $_POST['senha']);
+    $custo = "06";
+    $senhaHash = crypt($_POST['senha'], "$2b$" . $custo . "$" . $salt . "$");
 
-    $read = $database->query($sqlUser);
-    $result = $read->fetchAll(PDO::FETCH_ASSOC);
-    $total_result = @count($result);
-    echo $total_result;
-
-    if ($total_result > 0) {
-      $ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
-
-      if ($ext == 'jpg' || $ext == 'png') {
-
-        $nomeNovo = md5(date('dmYHiimg') . $_FILES['avatar']['tmp_name']);
-
-        $destino = 'assets/images/' . $nomeNovo . "." . $ext;
-
-        $avatar = $nomeNovo . "." . $ext;
-
-        $arquivo_tmp = $_FILES['avatar']['tmp_name'];
-
-        move_uploaded_file($arquivo_tmp, $destino);
-
-        $salt = md5($_POST['email'] . $_POST['senha']);
-        $custo = "06";
-        $senhaHash = crypt($_POST['senha'], "$2b$" . $custo . "$" . $salt . "$");
-
-        $sql = "insert into usuarios(nomeUsuario,emailUsuario,senhaUsuario,avatarUsuario) values ('{$_POST['nome']}','{$_POST['email']}','{$senhaHash}','{$avatar}')";
-        $database->query($sql);
-      } else {
-        echo "<script>alert('Erro na exteção do arquivo')</script>";
-        echo "<script>window.location.href = 'criar.php'</script>";
-      }
-    } else {
-      echo "<script>alert('E-mail já cadastrado!');</script>";
-      echo "<script>window.location.href = 'criar.php'</script>";
-    }
+    $sql = "insert into usuarios(nomeUsuario,emailUsuario,senhaUsuario) values ('{$_POST['nome']}','{$_POST['email']}','{$senhaHash}')";
+    $database->query($sql);
   }
 
   public function verTudo()
   {
-    parent::getInstancia();
+    
     $database = PdoConexao::getInstancia();
     $database = $this->getInstancia();
 
     $sql = "select * from usuarios";
     $read = $database->query($sql);
 
-    $usuarios = [];
+    $students = [];
 
 
     while ($row = $read->fetch(PDO::FETCH_ASSOC)) {
-      $usuarios[] = $row;
+      // while ($row = mysqli_fetch_array($read)) {
+      $students[] = $row;
     }
 
-    return $usuarios;
+    return $students;
   }
 
   public function ver($id)
   {
-    parent::getInstancia();
+  
     $database = PdoConexao::getInstancia();
 
     $database = $this->getInstancia();
     $sql = "select * from usuarios where idUsuario = '{$id}'";
     $read = $database->query($sql);
-    $usuario = $read->fetch(PDO::FETCH_ASSOC);
-    return $usuario;
+    $student = $read->fetch(PDO::FETCH_ASSOC);
+    return $student;
   }
 
 
@@ -95,54 +66,24 @@ class User extends PdoConexao
 
     $database = $this->getInstancia();
 
-
-    $ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
-
-
-
-    if ($ext == 'jpg' || $ext == 'png') {
-
-      $nomeNovo = md5(date('dmYHiimg') . $_FILES['avatar']['tmp_name']);
-
-      $destino = 'assets/images/' . $nomeNovo . "." . $ext;
-
-      $avatar = $nomeNovo . "." . $ext;
-
-      $arquivo_tmp = $_FILES['avatar']['tmp_name'];
-
-      move_uploaded_file($arquivo_tmp, $destino);
-    }
-
     $salt = md5($_POST['email'] . $_POST['senha']);
     $custo = "06";
     $senhaHash = crypt($_POST['senha'], "$2b$" . $custo . "$" . $salt . "$");
 
-    if ($_POST['senha'] == "" && $_FILES['avatar']['name'] == '') {
+    if ($_POST['senha'] == "") {
       $sql = "update usuarios set 
       nomeUsuario = '{$_POST['nome']}', 
-      emailUsuario = '{$_POST['email']}'     
+      emailUsuario = '{$_POST['email']}'
+      
       where idUsuario = '{$_POST['id']}'";
       $database->query($sql);
-    } elseif ($_FILES['avatar']['name'] == "") {
-      $sql = "update usuarios set 
-      nomeUsuario = '{$_POST['nome']}', 
-      emailUsuario = '{$_POST['email']}',
-      senhaUsuario = '$senhaHash'   
-      where idUsuario = '{$_POST['id']}'";
-      $database->query($sql);
-    } elseif ($_POST['senha'] == "") {
-      $sql = "update usuarios set 
-      nomeUsuario = '{$_POST['nome']}', 
-      emailUsuario = '{$_POST['email']}',
-      avatarUsuario = '{$avatar}'      
-      where idUsuario = '{$_POST['id']}'";
-      $database->query($sql);
+
+     
     } else {
       $sql = "update usuarios set 
       nomeUsuario = '{$_POST['nome']}', 
       emailUsuario = '{$_POST['email']}', 
-      senhaUsuario = '$senhaHash',
-      avatarUsuario = '{$avatar}'
+      senhaUsuario = '$senhaHash'
       
       where idUsuario = '{$_POST['id']}'";
       $database->query($sql);
@@ -173,17 +114,17 @@ class User extends PdoConexao
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     $total_result = count((array)$result);
     if ($total_result == 0) {
-      $email = "admin@admin.com";
-      $senha = "admin";
+      $email = "digital@digitalspacesw.com.br";
+      $senha = "1234";
 
       $salt = md5($email . $senha);
-
+      echo $salt . "<br>";
       $custo = "06";
       $senhaHash = crypt($senha, "$2b$" . $custo . "$" . $salt . "$");
 
-      $database->query("insert into usuarios(nomeUsuario,emailusuario,senhaUsuario,avatarUsuario)
+      $database->query("insert into usuarios(nomeUsuario,emailusuario,senhaUsuario)
     values
-    ('admin','$email', '$senhaHash','avatar.png');");
+    ('admin','$email', '$senhaHash');");
     }
   }
 
@@ -203,11 +144,15 @@ class User extends PdoConexao
     @session_start();
     $email = $_POST['email'];
     $senha = $_POST['senha'];
-
+    // echo $email;
+    // echo '<br>';
+    // echo $senha;
+    // echo '<br>';
     $salt = md5($email . $senha);
     $custo = "06";
     $senhaHash = crypt($senha, "$2b$" . $custo . "$" . $salt . "$");
-
+    // echo '<br>';
+    // echo $senhaHash;
 
     $query = $database->prepare("select * from usuarios where (emailUsuario = :email) and senhaUsuario = :senha");
 
@@ -218,19 +163,20 @@ class User extends PdoConexao
     $query->execute();
 
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
-
+    // $result = $query->fetch_assoc();;
+    // var_dump($result);
     $total_result = @count($result);
-
+    // print_r( $total_result."teste"); 
 
     if ($total_result > 0) {
-      echo $_SESSION['id_admin'] = $result[0]['idUsuario'];
+      $_SESSION['id_admin'] = $result[0]['idUsuario'];
       echo  $_SESSION['nome_admin'] = $result[0]['nomeUsuario'];
       $_SESSION['email_admin'] = $result[0]['emailUsuario'];
-      $_SESSION['avatar_admin'] = $result[0]['avatarUsuario'];
-      echo "<script>window.location.href='painel';</script>";
+      echo "<script>window.location='painel';</script>";
     } else {
       echo "<script>window.alert('Dados incoretos');</script>";
       echo "<script>window.location='index.php';</script>";
+      // header('Location:index.php');
     }
   }
 }

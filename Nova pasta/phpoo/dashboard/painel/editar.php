@@ -1,32 +1,44 @@
 <?php
-
 require_once './class/User-class.php';
 
 require_once "./verificar.php";
-$usuario = new User();
+
+$student = new User();
 
 
 $userId = $_SESSION['id_admin'];
-$userNome = $usuario->ver($userId)['nomeUsuario'];
-$userAvatar = $usuario->ver($userId)['avatarUsuario'];
+$userNome = $student -> ver($userId)['nomeUsuario'];
+
+
+
+
+$student -> ver($_POST['id']);
+
+
+// print_r($student -> ver($_POST['id'])['nomeUsuario']);
+$nome = $student->ver($_POST['id'])['nomeUsuario'];
+$email = $student->ver($_POST['id'])['emailUsuario'];
+$senha = $student->ver($_POST['id'])['senhaUsuario'];
+$idnome = $student->ver($_POST['id'])['idUsuario'];
+
+$salt = md5($email . $senha);
+$custo = "06";
+$senhaHash = crypt($senha, "$2b$" . $custo . "$" . $salt . "$");
+
+
+
+// print_r($student['name']);
+// var_dump($student['name']);
 ?>
+
 <!doctype html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <style>
-        .avatar {
-            width: 50px;
-        }
-        nav {
-            background: linear-gradient(100deg, #ffe53bd8, #ff2525da);
-            box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
-        }
-    </style>
 </head>
 
 <body>
@@ -48,40 +60,34 @@ $userAvatar = $usuario->ver($userId)['avatarUsuario'];
 
                 </ul>
                 <span class="navbar-text">
-                    <img src="./assets/images/<?= $userAvatar ?>" alt="" class="img-fluid avatar">
-                    <?php echo $userNome; ?>
+                <?php echo $userNome;?>
                 </span>
-                <a href="./../logout.php" class="btn btn-primary mx-4">sair</a>
+                <a href="./../logout.php">sair</a>
             </div>
         </div>
     </nav>
 
-    <h1 class="text-center py-5">Criar usuário</h1>
+<h1 class="text-center py-5">Editar usuario</h1>
 
     <div class="container">
-        <form action="index.php" method="POST" enctype="multipart/form-data">
+        <form action="index.php" method="POST">
             <div class="mb-3">
                 <label class="form-label">Nome</label>
-                <input type="text" class="form-control" name="nome">
+                <input type="text" class="form-control" name="nome" value="<?= $nome;?>">
             </div>
             <div class="mb-3">
                 <label class="form-label">Email</label>
-                <input type="email" class="form-control" name="email">
+                <input type="email" class="form-control" name="email" value="<?= $email;?>">
             </div>
             <div class="mb-3">
                 <label class="form-label">Senha</label>
-                <input type="password" class="form-control" name="senha">
+                <input type="password" class="form-control"  name="senha" value="" placeholder="*********">
             </div>
+            <input type="hidden" name="action" value="update">
 
-            <div class="mb-3">
-                <label class="form-label">img</label>
-                <input type="file" class="form-control" name="avatar">
-            </div>
+            <input type="text" name="id" value="<?= $idnome;?>">
 
-            <input type="hidden" name="action" value="create">
-
-            <button type="submit" class="btn btn-primary">Adicionar</button>
-
+            <button type="submit" class="btn btn-primary">Editar</button>
         </form>
     </div>
 
