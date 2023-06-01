@@ -70,7 +70,9 @@ class User extends PdoConexao
     while ($row = $read->fetch(PDO::FETCH_ASSOC)) {
       $usuarios[] = $row;
     }
-
+echo "<pre>";
+    echo json_encode($usuarios);
+    echo "</pre>";
     return $usuarios;
   }
 
