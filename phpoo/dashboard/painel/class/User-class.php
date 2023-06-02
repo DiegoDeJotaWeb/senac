@@ -70,9 +70,6 @@ class User extends PdoConexao
     while ($row = $read->fetch(PDO::FETCH_ASSOC)) {
       $usuarios[] = $row;
     }
-echo "<pre>";
-    echo json_encode($usuarios);
-    echo "</pre>";
     return $usuarios;
   }
 
@@ -98,8 +95,6 @@ echo "<pre>";
 
 
     $ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
-
-
 
     if ($ext == 'jpg' || $ext == 'png') {
 
