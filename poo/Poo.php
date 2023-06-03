@@ -181,3 +181,18 @@ class MinhaClass9
         return $this->prop1 . "<br>";
     }
 }
+
+// Cria um novo objeto
+
+$obj = new MinhaClass9();
+// Mostra uma mensagem ao final do arquivo
+
+echo "Fim do arquivo. <br>";
+?>
+
+<!-- __CLASS__ retorna o nome da classe na qual foi usada, função quando um objeto for destruido -->
+
+<!-- chamar uma função quando um objeto for destruido -->
+
+<!-- O metodo __destruct() esta disponivel,
+Ele é útil para finalizar -->
