@@ -4,7 +4,7 @@
 
 
 <?php
-class MinhaClass
+class MinhaClass1
 {
     // Propriedades e metodos da Classe vem aqui 
 }
@@ -20,25 +20,27 @@ $obj = new MinhaClass;
 
 
 <?php
-class MinhaClass
+class MinhaClass2
 {
     // As propriedades e metodos da Classe vem aqui
 }
 
-$obj = new MinhaClass;
+$obj = new MinhaClass2;
 var_dump($obj);
+echo '<br>';
 ?>
 
 <!-- Definindo as propriedade da classe  -->
 <!-- Usamos ass propriedades, que são variaveis especificas a classe  -->
 
 <?php
-class MinhaClass
+class MinhaClass3
 {
     public $obj = "Sou uma propriedade de classe";
 }
-$obj = new MinhaClass;
+$obj = new MinhaClass3;
 var_dump($obj);
+echo '<br>';
 ?>
 
 <!-- Definindo as propriedades da classe  -->
@@ -47,12 +49,13 @@ var_dump($obj);
 <!-- Funcionalidades particulares que os objetos serão capazes de executar, são definidas dentro das classes na forma de metodos -->
 
 <?php
-class MinhaClass
+class MinhaClass4
 {
     public $obj = "Sou uma propriedade de classe";
 }
-$obj = new MinhaClass;
+$obj = new MinhaClass4;
 var_dump($obj);
+echo '<br>';
 ?>
 
 <!-- Para ver o valor da propriedade  -->
@@ -60,21 +63,22 @@ var_dump($obj);
 <!-- O uso da flecha (->) e um construto de POO -->
 
 <?php
-class MinhaClass
+class MinhaClass5
 {
     public $prop1 = "Sou uma propriedade de classe";
 }
-$obj = new MinhaClass;
+$obj = new MinhaClass5;
 echo $obj->prop1; // Mostra a saida/ conteudo da propriedade
+echo '<br>';
 ?>
 
 <!-- Definindo metodos de classe -->
 <!-- Metodos são funções especificas das classes -->
 
 <?php
-class MinhaClass
+class MinhaClass6
 {
-    public $prop1 = "Sou um propriedade de classe";
+    public $prop1 = "Sou uma propriedade de classe";
     public function setProperty($newval)
     {
         $this->prop1 = $newval;
@@ -84,10 +88,96 @@ class MinhaClass
         return $this->prop1 . "<br>";
     }
 }
-$obj = new MinhaClass;
+$obj = new MinhaClass6;
 echo $obj->prop1;
-
+echo '<br>';
 ?>
 
 <!-- "this" permite que os objetos referenciem-se usando $this. 
 Quando estiver dentro, use $this da mesma forma que voce usaria o nome do objeto fora da classe -->
+
+
+
+<?php
+class MinhaClass7
+{
+    public $prop1 = "Sou uma propriedade de classe";
+    public function setProperty($newval)
+    {
+        $this->prop1 = $newval;
+    }
+
+    public function getProperty()
+    {
+        return $this->prop1 . "<br>";
+    }
+}
+
+$obj = new MinhaClass7;
+echo $obj->getProperty(); // le e o valor da propriedade
+$obj->setProperty("Sou uma nova propriedade!"); //Atribui um novo valor
+echo $obj->getProperty(); //Le o valor novamente para mostrar a mudança 
+echo '<br>';
+?>
+
+<!-- O poder de orientação objeto mostra-se ao usar multiplas instancias da mesma classe -->
+
+<?php
+class MinhaClass8
+{
+    public $prop1 = "Sou uma propriedade de classe";
+    public function setProperty($newval)
+    {
+        $this->prop1 = $newval;
+    }
+    public function getProperty()
+    {
+        return $this->prop1 . "<br>";
+    }
+}
+
+// Create two objects
+
+$obj = new MinhaClass8();
+$obj2 = new MinhaClass8();
+
+// mostra o valor de $pro1 de ambos os objetos
+
+echo $obj->getProperty();
+echo $obj2->getProperty();
+
+// Atribui novos valores para ambos os objetos
+
+$obj->setProperty("Sou um novo valor de propriedade!");
+$obj2->setProperty("Pertença a segunda instancia");
+
+// mostra o valor de $prop1 de ambos os objetos
+
+echo $obj->getProperty();
+echo $obj2->getProperty();
+
+echo '<br>';
+?>
+
+
+<!-- Usando construtores e destruidores 
+O metodo construtor de uma classe sempre é executado quando um objeto da classe é instanciado. É um tipo especial de função do PHP. Normalmente o programador utiliza o método construtor para inicializar os atributos de um objeto, como por exemplo: Estabelecer conexão com um banco de dados, abertura de um arquivo que será utilizado para escrita
+-->
+
+<?php
+class MinhaClass9
+{
+    public $prop1 = "Sou uma propriedade de classe";
+    public function __construct()
+    {
+        echo 'A classe "' , __CLASS__ , ' " foi instanciada! <br>';        
+    }
+
+    public function setProperty($newval){
+        $this->prop1 = $newval;
+    }
+
+    public function getProperty(){
+        return $this->prop1 . "<br>";
+    }
+}
