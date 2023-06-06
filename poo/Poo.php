@@ -194,5 +194,11 @@ echo "Fim do arquivo. <br>";
 
 <!-- chamar uma função quando um objeto for destruido -->
 
-<!-- O metodo __destruct() esta disponivel,
-Ele é útil para finalizar -->
+<!-- O metodo __destruct() funciona como um finalizador e, é executado ao finalizarmos um objeto, ou seja, quando o objeto, ou seja, quando o objeto é desalocado da memoria, quando atribuimos NULL ao objeto, quando usamos a função unset() no objeto, ou tambem quando o programa é fechado
+
+
+
+
+-->
+
+
