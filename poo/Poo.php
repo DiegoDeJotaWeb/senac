@@ -170,14 +170,16 @@ class MinhaClass9
     public $prop1 = "Sou uma propriedade de classe";
     public function __construct()
     {
-        echo 'A classe "' , __CLASS__ , ' " foi instanciada! <br>';        
+        echo 'A classe "', __CLASS__, ' " foi instanciada! <br>';
     }
 
-    public function setProperty($newval){
+    public function setProperty($newval)
+    {
         $this->prop1 = $newval;
     }
 
-    public function getProperty(){
+    public function getProperty()
+    {
         return $this->prop1 . "<br>";
     }
 }
@@ -194,11 +196,166 @@ echo "Fim do arquivo. <br>";
 
 <!-- chamar uma função quando um objeto for destruido -->
 
-<!-- O metodo __destruct() funciona como um finalizador e, é executado ao finalizarmos um objeto, ou seja, quando o objeto, ou seja, quando o objeto é desalocado da memoria, quando atribuimos NULL ao objeto, quando usamos a função unset() no objeto, ou tambem quando o programa é fechado
+<!-- O metodo __destruct() funciona como um finalizador e, é executado ao finalizarmos um objeto, ou seja, quando o objeto, ou seja, quando o objeto é desalocado da memoria, quando atribuimos NULL ao objeto, quando usamos a função unset() no objeto, ou tambem quando o programa é fechado-->
 
 
+<?php
+function __destruct()
+{
+    echo "Objeto finalizado";
+}
+?>
+
+<!--Mostre uma mensagem quando um objeto for destruido usando o método mágico __destruct() na classe MinhaClass:-->
+
+<?php
+class MinhaClass10
+{
+    public $pro1 = "Sou uma propeiedade de classe!";
+    public function __construct()
+    {
+        echo 'A classe"', __CLASS__, '" foi instanciada </br>';
+    }
+    public function __destruct()
+    {
+        echo 'A classe"', __CLASS__, '"foi destruída </br>';
+    }
+    public function setProperty($newval)
+    {
+        $this->pro1 = $newval;
+    }
+    public function getProperty()
+    {
+        return $this->pro1 . "<br/>";
+    }
+}
+//Cria um novo objeto
+$obj = new MinhaClass10;
+//Mostra o valor de $prop1
+echo $obj->getProperty();
+//Mostra uma mensagem ao final do arquivo
+echo "Fim do arquivo.</br>";
+
+?>
+
+<!--Método __toString, tentar mostrar um objeto como uma string resulta em um erro fatal.
+    Tente mostrar um objeto, usando echo, sem o método-->
+
+<?php
+class MinhaClass11
+{
+    public $prop1 = "Sou uma propriedade de Classe";
+    public function __construct()
+    {
+        echo 'A classe"', __CLASS__, '" foi instanciada!</br>';
+    }
+    public function __destruct()
+    {
+        echo 'A classe"', __CLASS__, '"foi destruída </br>';
+    }
+    public function setProperty($newval)
+    {
+        $this->prop1 = $newval;
+    }
+    public function getProperty()
+    {
+        return $this->prop1 . "</br>";
+    }
+}
+//Cria um novo objeto
+$obj = new MinhaClass11;
+//Mostra o objeto como uma string
+echo $obj;
+//Destroí o objeto
+unset($obj);
+//Mostra uma mensagem ao final do arquivo
+echo "Fim do arquivo.</br>";
+?>
+
+<!--Usando Herança de classe-->
+<!--Classes podem herder métodos e propriedades de outra classe usando a palavra chave extends-->
+
+<?php
+class MinhaClass12
+{
+    public $prop1 = "Sou uma propriedade de classe";
+    public function __construct()
+    {
+        echo 'A classe"', __CLASS__, '"foi instanciada!<br>';
+    }
+}
+?>
 
 
--->
+<!-- Usando herança de Classe  -->
+<!-- Classes podem herdar metodos e propriedades de outra classe usando a palavra chave extends -->
 
+<?php
 
+class MinhaClass13
+{
+    public $prop1 = "Sou uma propriedade de classe!";
+    public function __construct()
+    {
+        echo 'A classe"', __CLASS__, '"foi instanciada!<br>';
+    }
+    public function __destruct()
+    {
+        echo 'A class"', __CLASS__, '" Foi destruida.<br>';
+    }
+    public function __toString()
+    {
+        echo "Usando o método toString";
+        return $this->getProperty();
+    }
+    public function setProperty()
+    {
+        return $this->prop1 . "<br>";
+    }
+}
+
+class MinhaOutraClass extends MinhaClass
+{
+    public function newMethod()
+    {
+        echo "De um novo método na classe " . __CLASS__ . "<br>";
+    }
+}
+
+// Cria um novo objeto
+$newObj = new MinhaOutraClass();
+
+// Usa o método da nova classe
+echo $newObj->newMethod();
+
+// Usa um método da classe pai
+echo $newObj->getProperty();
+
+?>
+
+<!-- Sobrescrevendo Métodos e Propriedades herdadas -->
+<!-- Alterar uma propriedade ou o comportamente de um método existente na nova classe -->
+
+<?php
+
+class MinhaClass{
+    public $prop1 = "Sou uma Propriedade de Classe";
+    public function __construct()
+    {
+        echo "A classe " . __CLASS__ . " foi instanciada!<br>";
+    }
+    public function __destruct()
+    {
+        echo "A class " .__CLASS__." foi destruida <br>"; 
+    }
+    public function __toString()
+    {
+        echo "Usando o método toString: ";
+        return $this->getProperty();
+    }
+    public function setProperty($newval){
+        $this->prop1 = $newval;
+    }
+}
+
+?>

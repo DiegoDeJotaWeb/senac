@@ -9,10 +9,13 @@ if (isset($_POST['action'])) {
         $create->criar();
     }
 
-    if ($_POST['action'] == 'update') {
-        $update = new User();
-        $update->editar();
-    }
+//     if ($_POST['action'] == 'update') {
+//         $update = new User();
+//         $update->editar(); 
+//         unlink($_POST['action']);
+// echo "teste";
+        
+//     }
 
     if ($_POST['action'] == 'delete') {
         $delete = new User();

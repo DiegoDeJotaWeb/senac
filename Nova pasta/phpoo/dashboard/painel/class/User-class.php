@@ -87,6 +87,7 @@ class User extends PdoConexao
       
       where idUsuario = '{$_POST['id']}'";
       $database->query($sql);
+      
     }
   }
 

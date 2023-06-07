@@ -7,11 +7,13 @@ if (isset($_POST['action'])) {
     if ($_POST['action'] == 'create') {
         $create = new User();
         $create->criar();
+        // exit;
     }
 
     if ($_POST['action'] == 'update') {
         $update = new User();
         $update->editar();
+        
     }
 
     if ($_POST['action'] == 'delete') {

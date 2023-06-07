@@ -22,8 +22,11 @@ class DB_con
 
     // Data insertion Functions
 
-    public function insert($nome,$pai,$mae,$email,$telefone,$endereco,$dataEntrega){
-        $ret=mysqli_query($this->dbh,"insert into cadastro (nome,pai,)values()");
+    public function insert($nome, $pai, $mae, $email, $telefone, $endereco, $dataEntrega)
+    {
+        $ret = mysqli_query($this->dbh, "insert into cadastro (nome,pai,mae,email,telefone,endereco,dataEntrega)values('$nome','$pai','$mae','$email','$telefone','$endereco','$dataEntrega')");
+        return $ret;
     }
-    return 
+
+    
 }
