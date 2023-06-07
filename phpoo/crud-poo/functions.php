@@ -28,5 +28,38 @@ class DB_con
         return $ret;
     }
 
+    // Data read function
+
+    public function fetchdata(){
+        $result = mysqli_query($this->dbh, "select * from cadastro")
+        or die(mysqli_error($this->dbh));
+        return $result;
+    }
+ // Data one record read function
+    // Funcao de leitura de um registro de dados
+
+    public function fetchonerecord($id){
+        $oneresult = mysqli_query($this->dbh, "select * from cadastro where id = $id");
+        return $oneresult;
+    }
+
+
+    // Data updation function
+
+    public function update($nome, $pai, $mae, $email, $telefone, $endereco, $dataEntrega, $userid ){
+        $updaterecord = mysqli_query($this->dbh, "update cadastro set 
+        nome = '$nome',
+        pai = '$pai', 
+        mae = '$mae', 
+        email = '$email', 
+        telefone = '$telefone', 
+        endereco = '$endereco', 
+        dataEntrega = '$dataEntrega'
+        where id = $userid");
+    }
+
     
+   
+
+
 }
