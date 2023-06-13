@@ -3,7 +3,7 @@ session_start();
 define('DB_SERVER', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASSWORD', '');
-define('DB_NAME', 'crudPoo');
+define('DB_NAME', 'crudpoo');
 
 class DB_con
 {
@@ -58,8 +58,11 @@ class DB_con
         where id = $userid");
     }
 
-    
    
+    // Data deletion function Function
 
-
+    public function delete($id){
+        $deleterecord = mysqli_query($this->dbh, "delete from cadastro where id = $id");
+        return $deleterecord;
+    }
 }
