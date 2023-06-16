@@ -41,7 +41,7 @@ if (isset($_POST['update'])) {
 <body>
 
     <div class="container">
-        <div class="col-md-12">
+        <div class="col-md-12 py-4">
             <h3>Crud Orientado a objeto php</h3>
             <hr>
         </div>
@@ -59,42 +59,42 @@ if (isset($_POST['update'])) {
     while ($row = mysqli_fetch_array($sql)) {
 
     ?>
-<div class="container">
-        <form name="insertrecord" method="post">
-            <div class="row">
-                <div class="col-md-4 my-3">
-                    <b>Nome</b>
-                    <input type="text" name="nome" value="<?= htmlentities($row['nome']); ?>" class="form-control">
+        <div class="container">
+            <form name="insertrecord" method="post">
+                <div class="row">
+                    <div class="col-md-4 my-3">
+                        <b>Nome</b>
+                        <input type="text" name="nome" value="<?= htmlentities($row['nome']); ?>" class="form-control">
+                    </div>
+                    <div class="col-md-4 my-3">
+                        <b>Pai</b>
+                        <input type="text" name="pai" value="<?= htmlentities($row['pai']); ?>" class="form-control">
+                    </div>
+                    <div class="col-md-4 my-3">
+                        <b>Mãe</b>
+                        <input type="text" name="mae" value="<?= htmlentities($row['mae']); ?>" class="form-control">
+                    </div>
+                    <div class="col-md-6 my-3">
+                        <b>Email</b>
+                        <input type="text" name="email" value="<?= htmlentities($row['email']); ?>" class="form-control">
+                    </div>
+                    <div class="col-md-6 my-3">
+                        <b>Telefone</b>
+                        <input type="text" name="telefone" value="<?= htmlentities($row['telefone']); ?>" class="form-control">
+                    </div>
+                    <div class="col-md-6 my-3">
+                        <b>Endereço</b>
+                        <input type="text" name="endereco" value="<?= htmlentities($row['endereco']); ?>" class="form-control">
+                    </div>
+                    <div class="col-md-6 my-3">
+                        <b>Data de entrega</b>
+                        <input type="text" name="dataEntrega" value="<?= htmlentities($row['dataEntrega']); ?>" class="form-control">
+                    </div>
                 </div>
-                <div class="col-md-4 my-3">
-                    <b>Pai</b>
-                    <input type="text" name="pai" value="<?= htmlentities($row['pai']); ?>" class="form-control">
-                </div>
-                <div class="col-md-4 my-3">
-                    <b>Mãe</b>
-                    <input type="text" name="mae" value="<?= htmlentities($row['mae']); ?>" class="form-control">
-                </div>
-                <div class="col-md-6 my-3">
-                    <b>Email</b>
-                    <input type="text" name="email" value="<?= htmlentities($row['email']); ?>" class="form-control">
-                </div>
-                <div class="col-md-6 my-3">
-                    <b>Telefone</b>
-                    <input type="text" name="telefone" value="<?= htmlentities($row['telefone']); ?>" class="form-control">
-                </div>
-                <div class="col-md-6 my-3">
-                    <b>Endereço</b>
-                    <input type="text" name="endereco" value="<?= htmlentities($row['endereco']); ?>" class="form-control">
-                </div>
-                <div class="col-md-6 my-3">
-                    <b>Data de entrega</b>
-                    <input type="text" name="dataEntrega" value="<?= htmlentities($row['dataEntrega']); ?>" class="form-control">
-                </div>
-            </div>
 
-            <input type="submit" class="btn btn-primary">
-        </form>
-</div>
+                <input type="submit" class="btn btn-primary">
+            </form>
+        </div>
     <?php
     }
     ?>
