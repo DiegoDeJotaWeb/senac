@@ -6,7 +6,8 @@ include 'functions.php';
 if (isset($_GET['del'])) {
     // objeto ID da linha de exclusão 
     $rid = $_GET['del'];
-    $deleted = new DB_con;
+    echo $rid;
+    $deletedata = new DB_con;
     $sql = $deletedata->delete($rid);
 
     if ($sql) {
@@ -73,6 +74,7 @@ if (isset($_GET['del'])) {
                             <td><?= htmlentities($row['pai']); ?></td>
                             <td><?= htmlentities($row['email']); ?></td>
                             <td><?= htmlentities($row['telefone']); ?></td>
+                            <td><?= htmlentities($row['endereco']); ?></td>
                             <td><?= htmlentities($row['dataEntrega']); ?></td>
                             <td><a href="update.php?id=<?= htmlentities($cnt); ?>">Editar</a></td>
                             <td><a href="index.php?del=<?= htmlentities($row['id']); ?>">Deletar</a></td>

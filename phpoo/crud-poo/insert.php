@@ -2,7 +2,7 @@
 // incluir arquivo de conexao de banco de dados 
 require_once 'functions.php';
 
-$inserdata = new DB_con();
+$insertdata = new DB_con();
 if (isset($_POST['insert'])) {
 
     // valores postados
@@ -85,7 +85,7 @@ if (isset($_POST['insert'])) {
                 <input type="date" name="dataEntrega" class="form-control">
             </div>
             <div class="col-md-12">
-                <input type="submit" class="btn btn-primary">
+                <input type="submit" name="insert" class="btn btn-primary">
             </div>
         </div>
 

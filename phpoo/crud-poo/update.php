@@ -52,9 +52,11 @@ if (isset($_POST['update'])) {
     // Obtenha o ID do usuario
 
     $userid = intval($_GET["id"]);
+    echo $userid;
     $onerecord = new DB_con();
 
     $sql = $onerecord->fetchonerecord($userid);
+    print_r($sql) ;
     $cnt = 1;
     while ($row = mysqli_fetch_array($sql)) {
 
