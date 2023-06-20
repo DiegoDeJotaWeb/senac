@@ -1,0 +1,18 @@
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/jsbarcode/3.6.0/JsBarcode.all.min.js"></script>
+    <script>
+        window.onload = function () {
+            JsBarcode(".barcode").init();
+        }
+    </script>
+</head>
+<body>
+    <svg class="barcode"  
+
+            jsbarcode-value="123456789012" 
+            jsbarcode-textmargin="0" 
+            jsbarcode-fontoptions="bold">
+    </svg>
+</body>
+</html>
