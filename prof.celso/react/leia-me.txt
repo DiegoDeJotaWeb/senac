@@ -1,0 +1,28 @@
+Vide: https://www.luiztools.com.br/post/como-usar-nodejs-mysql/
+
+No terminal:
+
+
+
+
+Para fazer uma consulta, no proprio db.js acrescentar:
+
+async function selectCustomers(){
+    const conn = await connect();
+    const [rows] = await conn.query('SELECT * FROM clientes;');
+    return rows;
+}
+ 
+module.exports = {selectCustomers}
+
+
+//
+Para acessar nosso banco remotamente:
+
+https://phpmyadmin.locaweb.com.br/
+Host: robb0547.publiccloud.com.br
+User: minha_sala39
+Password: S3nac_sala39
+
+
+//Favor iniciar a criação das tabelas do projeto. Prioridade: Tabela de usuarios do APP.

@@ -1,0 +1,7 @@
+https://phpmyadmin.locaweb.com.br/
+usuario: minha_sala39
+senha: S3nac_sala39
+host: robb0547.publiccloud.com.br
+Banco de dados: minhavilacarrao_sala39
+
+
