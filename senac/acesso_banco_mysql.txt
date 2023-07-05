@@ -1,0 +1,4 @@
+https://phpmyadmin.locaweb.com.br/
+Host: robb0547.publiccloud.com.br
+User: minha_sala39
+Password: S3nac_sala39

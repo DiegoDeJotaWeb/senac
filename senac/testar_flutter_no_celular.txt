@@ -1,0 +1,37 @@
+Como testar app flutter no celular android:
+
+Referência: https://medium.com/@marcoshenriqueh393/como-configurar-dispositivos-f%C3%ADsicos-no-flutter-b3acbe02e895
+
+Vá em configurações
+
+-Clique na opção: Sobre o Telefone
+-Clique várias em: número da versão até aparecer uma mensagem falando que você agora é um desenvolvedor
+-Vá novamente na tela principal
+-Terá uma opção de configurações extras ou coisa do tipo
+-Clique em Opções do Desenvolvedor
+-Ative a opção principal, e veja se a Depuração USB está ativa, caso não esteja, já ligue :)
+
+Dessa maneira quando você conectar seu celular no computador e permitir a transferência usb, você pode digitar em seu terminal flutter devices que já irá aparecer que está conectado, e dessa maneira
+
+Se estiver utilizando o VSCode para desenvolver na parte inferior provavelmente irá aparecer o modelo do seu celular e apertando CTRL + F5 ele comece a fazer o donwload em seu celular do aplicativo para funcionar
+
+A cada 7 dias a permissão para depuração é revogada automaticamente, então desative a depuração USB e ative novamente
+
+Teste: flutter run seuprojeto
+Se não funcionar, no terminal digite:
+flutter clean
+depois que terminar:
+flutter pub get
+Assim vai baixar as bibliotecas necessarias para a execução
+
+Para verificar quais são os dispositivos como navegadores e celulares digite:
+flutter devices
+Deverá mostrar o nome ou série do seu celular
+
+Teste novamente:
+flutter run seuprojeto
+
+
+
+Ver:
+https://docs.flutter.dev/development/ui/widgets-intro
